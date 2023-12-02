@@ -288,6 +288,19 @@
   }
 }
 
+.screen--intro {
+  .intro__message  p {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  &.active .intro__message  p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-property: opacity, transform;
+    transition-duration: .4s;
+  }
+}
+
 .screen--story {
   background-color: $c-dark;
   background-image: url("../img/slide1.jpg"), url("../img/slide2.jpg"), url("../img/slide3.jpg"), url("../img/slide4.jpg");
@@ -308,6 +321,27 @@
 .screen--game {
   position: relative;
   background-color: $c-dark;
+  &.active .form__field {
+    width: calc(100% - 3rem - 17rem);
+    transition: width 0.4s linear;
+    opacity: 1;
+
+    @media (min-width: $stop-scaling) {
+      width: calc(100% - 210px);
+    }
+
+    @media (orientation: portrait) {
+      width: calc(100% - 1rem - 4rem);
+    }
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+      width: calc(100% - 3rem - 6rem);
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      width: calc(100% - 1rem - 4rem);
+    }
+  }
 
   &::before {
     content: "";
