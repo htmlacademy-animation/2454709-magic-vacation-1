@@ -46,12 +46,17 @@
   &::before {
     @include center;
     content: "";
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
     background-color: $c-light;
     z-index: -1;
-    transition: width $long-sb-tsn-time, height $long-sb-tsn-time, background-color $short-sb-tsn-time;
+    width: 0;
+    height: 0;
+    transition: height .4s ease-in 1s, width .4s ease-in 1s;
+
+    .loaded & {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   svg {
@@ -67,6 +72,7 @@
     &::before {
       width: 112.5%;
       height: 112.5%;
+      transition: width $long-sb-tsn-time, height $long-sb-tsn-time;
     }
   }
 
@@ -76,6 +82,7 @@
 
     &::before {
       background-color: $c-purple;
+      transition: background-color $short-sb-tsn-time;
     }
   }
 
