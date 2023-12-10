@@ -11,7 +11,7 @@
       min-height: calc(var(--vh, 1vh) * 100);
     }
 
-    & > .swiper-slide-active {
+    .active & > .swiper-slide-active {
       & > .slider__item-text {
         opacity: 1;
         transform: translateX(0);
@@ -22,7 +22,7 @@
       }
     }
 
-    & > .swiper-slide-next {
+    .active & > .swiper-slide-next {
       & > .slider__item-text {
         opacity: 1;
         transform: translateX(0);
