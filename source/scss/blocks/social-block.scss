@@ -44,14 +44,21 @@
   }
 
   &::before {
-    @include center;
+    position: absolute;
+    top: 0;
+    left: 0;
     content: "";
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
     background-color: $c-light;
     z-index: -1;
-    transition: width $long-sb-tsn-time, height $long-sb-tsn-time, background-color $short-sb-tsn-time;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: transform .6s cubic-bezier(.6,-0.09,.34,1.51) .8s;
+
+    .loaded & {
+      transform: scale(1);
+    }
   }
 
   svg {
@@ -65,8 +72,8 @@
   .social-block--active & {
 
     &::before {
-      width: 112.5%;
-      height: 112.5%;
+      transform: scale(1.2);
+      transition: transform $long-sb-tsn-time;
     }
   }
 
@@ -76,6 +83,7 @@
 
     &::before {
       background-color: $c-purple;
+      transition: background-color $short-sb-tsn-time;
     }
   }
 

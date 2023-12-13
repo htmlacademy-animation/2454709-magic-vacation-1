@@ -1,3 +1,21 @@
+.curtain {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #5f458c;
+  transform: translateY(0);
+  transition: transform .4s ease-in;
+
+  .active & {
+    transform: translateY(100%);
+    transition-duration: 0s;
+  }
+}
+
 .screen {
   position: relative;
   display: flex;
@@ -46,6 +64,14 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  transform: translateY(100%);
+  .loaded & {
+    transform: translateY(0);
+    transition-property: transform;
+    transition-duration: .8s;
+    transition-timing-function: cubic-bezier(.50,.85,.50,.85);
+    transition-delay: .2s;
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;

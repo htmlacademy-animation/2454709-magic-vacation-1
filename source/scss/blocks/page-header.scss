@@ -35,6 +35,16 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  transform: translateX(-4rem);
+  opacity: 0;
+  .loaded & {
+    opacity: 1;
+    transform: translateX(0);
+    transition-property: opacity, transform;
+    transition-delay: .4s;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.49,.85,.49,.85);
+  }
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -171,12 +181,20 @@
 }
 
 .page-header__menu {
+  opacity: 0;
   font-family: $font-alt;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  .loaded & {
+    opacity: 1;
+    transition: opacity;
+    transition-delay: .8s;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.49,.85,.49,.85);
+  }
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -268,7 +286,15 @@
 
     &.active {
       &::after {
-        width: 100%;
+        right: unset;
+        left: 0;
+        width: 0;
+        transition-property: width;
+        transition-duration: .4s;
+        transition-delay: .8s;
+        .loaded & {
+          width: 100%;
+        }
       }
     }
 
@@ -289,7 +315,15 @@
 }
 
 .page-header__social {
+  opacity: 0;
   margin-left: 4.8rem;
+  .loaded & {
+    opacity: 1;
+    transition: opacity;
+    transition-delay: 1s;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.49,.85,.49,.85);
+  }
 
   @media (min-width: $stop-scaling) {
     margin-left: 48px;
