@@ -1,0 +1,16 @@
+.string {
+  overflow-y: hidden;
+  display: inline-flex;
+}
+
+.symbol {
+  display: inline-flex;
+  //will-change: transform;
+  transform: translate3d(0, 20%, 0);
+}
+
+@keyframes moveSymbol {
+  from {
+    transform: translate3d(0, 120%, 0);
+  }
+}

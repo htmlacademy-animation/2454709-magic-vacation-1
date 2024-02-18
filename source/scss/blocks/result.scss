@@ -23,35 +23,75 @@
 }
 
 .result__image {
+  position: relative;
+  flex-grow: 1;
+}
+.img-part {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: -1;
-
-  @media (orientation: portrait) {
-    left: -1rem;
-    right: -1rem;
-  }
-
-  picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
+}
+.leaf_leftward {
+  width: 300px;
+  top: 120px;
+  right: calc(50% + 20px);
+  opacity: 1;
+  transform-origin: right;
+  animation-name: leafLeftwardAnimation;
+  animation-delay: 0.3s;
+  animation-duration: 1.5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.leaf_rightward {
+  width: 300px;
+  top: 20px;
+  left: calc(50% + 20px);
+  opacity: 1;
+  transform-origin: left;
+  animation-name: leafRightwardAnimation;
+  animation-delay: 0.3s;
+  animation-duration: 1.5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.leaf_green {
+  width: 340px;
+  top: 160px;
+  left: calc(50% + 40px);
+  opacity: 1;
+  transform: rotate(-5deg);
+  transform-origin: left;
+  animation-name: leafGreenAnimation;
+  animation-delay: 0.4s;
+  animation-duration: 1.5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.suitcase {
+  right: calc(50% - 200px);
+  width: 400px;
+  height: 400px;
+  transform: rotate(-8deg);
+  animation-name: suitcaseAnimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+.flamingo {
+  width: 300px;
+  height: 300px;
+  right: calc(50% - 62px);
+  top: 100px;
+  opacity: 1;
+  animation-name: flamingoAnimation, flamingoAnimationMovement;
+  animation-delay: 0s, 0.5s;
+  animation-duration: 0.5s, 4s;
+  animation-fill-mode: backwards, forwards;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: linear, ease-in-out;
 }
 
 .result__title {
