@@ -41,3 +41,88 @@
     color: rgba(95, 69, 140, 1);
   }
 }
+
+@keyframes leafLeftwardAnimation {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes leafRightwardAnimation {
+  0% {
+    opacity: 0;
+    transform: rotate(-40deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes leafGreenAnimation {
+  0% {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+  55% {
+    transform: rotate(0);
+  }
+  70% {
+    transform: rotate(-15deg);
+  }
+  85% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes suitcaseAnimation {
+  from {
+    transform: scale(0.01) translateY(5000vh) rotate(-8deg)
+  }
+}
+
+@keyframes flamingoAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50vh) rotate(-20deg);
+  }
+}
+
+@keyframes flamingoAnimationMovement {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  5% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+  20% {
+    transform: translateY(35px) rotate(-10deg);
+  }
+  35% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+  40% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
